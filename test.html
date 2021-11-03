@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chuẩn hoá tên khách hàng</title>
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="icon" href="customer.png" type="image/icon type">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@400;500;700;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="test.css">
+        <link rel="stylesheet" href="themify-icons/themify-icons.css">
+    </head>
+    <body>
+        <!-- Chuan hoa ten khach hang -->
+        <div id="toast"></div>
+        <div class="main" id="namepage">
+
+            <form action="" class="form">
+                <h3 class="heading">CHUẨN HOÁ TÊN KHÁCH HÀNG</h3>
+                <p class="desc"><i>Viết chuẩn form - tìm siêu nhanh</i></p>
+                <div class="spacer"></div>
+
+                <div class="form-group">
+                    <label for="fullname" class="form-label">1. Nhập tên khách
+                        hàng
+                        <font color=red> có dấu</font>
+                    </label>
+                    <input id="fullname" name="fullname" type="text"
+                        placeholder="VD: bà đường" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+
+                <!-- address -->
+                <div class="form-group">
+                    <label for="address" class="form-label">2. Chọn địa chỉ</label>
+                    <div class="vanphu">
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Đồng Ân" id="1"
+                            onclick="changeHandler()">
+                        <label for="1" class="vanphu--label">Đồng Ân</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Đồng Nang" id="2"
+                            onclick="changeHandler()">
+                        <label for="2" class="vanphu--label">Đồng Nang</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Hiền Lương" id="3"
+                            onclick="changeHandler()">
+                        <label for="3" class="vanphu--label">Hiền Lương</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Lão Cầu" id="4"
+                            onclick="changeHandler()">
+                        <label for="4" class="vanphu--label">Lão Cầu</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Phú Lâm" id="5"
+                            onclick="changeHandler()">
+                        <label for="5" class="vanphu--label">Phú Lâm</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Phú Linh" id="6"
+                            onclick="changeHandler()">
+                        <label for="6" class="vanphu--label">Phú Linh</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Phượng Các" id="7"
+                            onclick="changeHandler()">
+                        <label for="7" class="vanphu--label">Phượng Các</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Phượng Lâm" id="8"
+                            onclick="changeHandler()">
+                        <label for="8" class="vanphu--label">Phượng Lâm</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Sào Lâm" id="9"
+                            onclick="changeHandler()">
+                        <label for="9" class="vanphu--label">Sào Lâm</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Tân Thành" id="10"
+                            onclick="changeHandler()">
+                        <label for="10" class="vanphu--label">Tân Thành</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Thành Bắc" id="11"
+                            onclick="changeHandler()">
+                        <label for="11" class="vanphu--label">Thành Bắc</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Thành Nam" id="12"
+                            onclick="changeHandler()">
+                        <label for="12" class="vanphu--label">Thành Nam</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Thành Tây" id="13"
+                            onclick="changeHandler()">
+                        <label for="13" class="vanphu--label">Thành Tây</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Trại Rào" id="14"
+                            onclick="changeHandler()">
+                        <label for="14" class="vanphu--label">Trại Rào</label>
+                        <input type="radio" name="address"
+                            class="vanphu--input" value="Trại Rào" id="15"
+                            onclick="changeHandler()">
+                        <label for="15" class="vanphu--label">Mèn</label>
+                    </div>
+                    <div class="address-more">
+                        <label for="more" class="address-more--label">Khác:
+                        </label>
+                        <input type="text" name="more" id="more"
+                            onkeyup="resultAddMore()">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="result" class="form-label">3. Xem kết quả</label>
+                    <div class="wrap-result">
+                        <input id="result" name="result" type="text"
+                            placeholder="Kết quả" class="form-control"
+                            style="text-align: left;">
+                        <div class="wrap-button">
+
+                            <input type="button" value="Sao chép" id="btnCopy"
+                                class="form-submit"
+                                onclick="copy()">
+
+                            <input type="button" class="form-submit"
+                                id="btnLoadPage"
+                                onclick="cancel()"
+                                value="Huỷ" />
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+
+
+        </div>
+        <script src="test.js"></script>
+    </body>
+</html>
